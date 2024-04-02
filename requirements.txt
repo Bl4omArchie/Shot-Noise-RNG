@@ -1,4 +1,2 @@
 pycryptodome
-hashlib
-cv2
-PIL
+opencv-python
