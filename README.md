@@ -23,8 +23,10 @@ For the noise generator, I'm using the camera of my laptop.
 Should work for every python3 version.
 Launch this command:
 ```bash
-pip3 
+pip3 install -r requirements.txt
 ```
+
+Then you can use the Fortuna PRNG from [main.py](main.py).
 
 # 🔗 Sources:
 
