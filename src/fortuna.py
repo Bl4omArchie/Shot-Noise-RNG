@@ -11,6 +11,11 @@ This script have tree classes:
 - Accumulator: handle RNG sources and seed the Generator
 
 --
+Usage:
+- The max byte size you can ask Fortuna for a random number is 2**20 as specified in my documentation
+- Call random() to get a random number of size N or call write_random() if you want to write the generated number in a file.
+
+--
 Source: Cryptography Engineering Design Principles and Practical Applications by Niels Ferguson, Bruce Schneier, Tadayoshi Kohno
 Author: archie
 """
@@ -25,12 +30,12 @@ class Fortuna:
         self.accumulator = accumulator
         self.generator = generator
 
-    def write_random_data(self, filename):
-        with open(filename, "a") as fp:
-            fp.write(self.generate_random_data(64))
-
     def random(self, n):
         return self.generator.generate_pseudo_random_data(n)
+    
+    def write_random(self, filename, n):
+        with open(filename, "a") as fp:
+            fp.write(self.generate_pseudo_random_data(n))
 
 
 class Generator():
@@ -61,6 +66,10 @@ class Generator():
         return r
 
     def generate_pseudo_random_data(self, n):
+        """
+        Limit the output length to reduce the statistical deviation from perfectly random outputs. 
+        Also ensure that the length is not negative.
+        """
         assert 0 <= n <= pow(2, 20)
 
         r = self.generate_blocks(n//16)[:n]
