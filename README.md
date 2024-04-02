@@ -1,2 +1,11 @@
 # Shot-Noise-RNG
-A little test about creating an RNG with Shot-Noise as a source of uncertainty 
+
+Implementation of a PRNG in python using Shot Noise as a random source. I will implement PRNG such as Fortuna, Yarrow and Blum Blum Shub.
+
+For the noise generator, I'm using the camera of my laptop.
+
+
+# Sources:
+
+- [Cryptography Engineering Design Principles and Practical Applications](https://www.schneier.com/wp-content/uploads/2015/12/fortuna.pdf)
+- [Wikipedia - Poisson_distribution](https://en.wikipedia.org/wiki/Poisson_distribution)
