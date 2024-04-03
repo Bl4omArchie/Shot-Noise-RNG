@@ -43,8 +43,11 @@ class Generator():
         self.state = None
         self.mode = mode
 
+
+    def initialize_generator(self):
         self.Key = 0
         self.Counter = 0
+        return (self.Key, self.Counter)
 
     def seed(self, s):
         self.fortuna.Key = HASH.update(self.Key | s)
@@ -79,8 +82,20 @@ class Generator():
 
 
 class Accumulator():
-    def __init__(self, block_size):
+    def __init__(self, generator, block_size):
+        self.generator = generator
         self.block_byte_size = block_size
+
+
+    def initialize_prng(self):
+        self.P = []
+        for _ in range(32):
+            self.P.append(0)
+        
+        self.reseed_count = 0
+        G = self.generator.initialize_generator()
+        return  (G, self.reseed_count, self.P)
+
     
     def initialize_prng(self):
         pass

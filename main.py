@@ -1,5 +1,4 @@
-from src.fortuna import *
-import os
+from src.prng.fortuna import *
 
 
 if __name__ == "__main__":
