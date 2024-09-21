@@ -96,9 +96,6 @@ class Accumulator():
         G = self.generator.initialize_generator()
         return  (G, self.reseed_count, self.P)
 
-    
-    def initialize_prng(self):
-        pass
 
     def get_random_data(self):
         pass
