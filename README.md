@@ -1,24 +1,19 @@
 # Shot Noise RNG
 
-Implementation of a PRNG in python using Shot Noise as a random source. I'm implementing PRNG such as Fortuna, Yarrow and Blum Blum Shub.
+I'm testing several RNG and PRNG algorithms. I also made a script for picture encryption with AES. 
 
-For the noise generator, I'm using the camera of my laptop.
 
-# 🚧 Work in progress 
-## TODO
+
+# 🚧 TODO
 - Fortuna, Generator and Accumulator classes
 - iterate_counter() algorithm
-- create a flag so the rng can stop to a given time
+- improve my RNG stream 
 
-## Done:
+## ✅ Done:
+- aes picture encryption
 - camera byte stream for rng source
 
-## Later:
-- Yarrow PRNG
-- Blum Blum Shub
-- Maybe other RNG sources
-
-# Installation
+# ⬇️ Installation
 
 Should work for every python3 version.
 Launch this command:
@@ -26,7 +21,7 @@ Launch this command:
 pip3 install -r requirements.txt
 ```
 
-Then you can use the Fortuna PRNG from [main.py](main.py).
+Then you can use the [main.py](main.py) and call my scripts.
 
 # 🔗 Sources:
 

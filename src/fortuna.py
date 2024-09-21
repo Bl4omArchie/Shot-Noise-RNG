@@ -3,7 +3,7 @@ import hashlib
 
 
 """
-Implementation of Fortuna PRNG
+Implementation of Fortuna PRNG in python
 
 This script have tree classes:
 - Fortuna: main class where you can generate and store random data
